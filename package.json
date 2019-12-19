@@ -5,6 +5,12 @@
     "types": "dist/index.d.ts",
     "typings": "dist/index.d.ts",
     "private": false,
+    "author": {
+        "name": "Robin Radic"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "start": "yarn build",
         "test": "echo \"test not implemented\" && exit 0",
