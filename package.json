@@ -4,6 +4,7 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "typings": "dist/index.d.ts",
+    "private": false,
     "scripts": {
         "start": "yarn build",
         "test": "echo \"test not implemented\" && exit 0",
