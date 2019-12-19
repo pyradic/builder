@@ -4,9 +4,9 @@ import { SyncBailHook, SyncHook, SyncWaterfallHook, Tapable }          from 'tap
 
 
 declare module 'webpack' {
-
     interface ChunkData {
         contentHash?:any
+        contentHashType?:any
         contentHashWithLength?:any
         module?: compilation.Module
         hash: string
