@@ -331,9 +331,6 @@ export function setupWebpacker(builder: Builder) {
         //     }
         // }
 
-        if ( addon.hasPyroConfig ) {
-            addon.runPyroConfig(builder);
-        }
     }
 
 

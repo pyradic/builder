@@ -64,13 +64,14 @@ export class Builder {
     constructor(options: Partial<BuilderOptions> = {}) {
         this.options = {
             ...this.options,
-            ...options
-        }
+            ...options,
+        };
     }
 
     public init() {
         this.addons = this.initAddons();
         this.wp     = this.initWebpacker();
+        this.runCustomAddonConfigs();
         this.hooks.initialized.call(this);
         return this;
     }
@@ -93,6 +94,14 @@ export class Builder {
         addons = addons.sortByDependency();
         addons = this.hooks.addons.call(addons);
         return addons;
+    }
+
+    protected runCustomAddonConfigs() {
+        for ( const addon of this.addons ) {
+            if ( addon.hasPyroConfig ) {
+                addon.runPyroConfig(this);
+            }
+        }
     }
 
 
